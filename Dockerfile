@@ -12,7 +12,7 @@ ADD https://huggingface.co/crapthings/plemeri-transparent-background/resolve/mai
 
 COPY scripts ./scripts
 COPY transparent-background ./transparent-background
-COPY runpod_app.py .
+COPY *.py .
 
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 RUN chmod +x ./scripts/install.sh
