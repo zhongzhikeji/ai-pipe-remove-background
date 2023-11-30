@@ -1,28 +1,12 @@
-from io import BytesIO
 import requests
-import json
 from PIL import ImageOps
 from diffusers.utils import load_image
 from transparent_background import Remover
-from urllib.parse import urlparse
 import runpod
 
+from utils import buff_png, upload_image, extract_origin_pathname
+
 remover = Remover()
-
-def buff_png (image):
-    buff = BytesIO()
-    image.save(buff, format = 'PNG')
-    buff.seek(0)
-    return buff
-
-def upload_image (url, image):
-    response = requests.put(url, data = buff_png(image), headers = { 'Content-Type': 'image/png' })
-    response.raise_for_status()
-
-def extract_origin_pathname (url):
-    parsed_url = urlparse(url)
-    origin_pathname = parsed_url.scheme + "://" + parsed_url.netloc + parsed_url.path
-    return origin_pathname
 
 def run (job):
     # prepare task
@@ -30,7 +14,6 @@ def run (job):
         print('debug', job)
 
         _input = job.get('input')
-        _webhook = job.get('webhook', '')
 
         input_url = _input.get('input_url')
         upload_url = _input.get('upload_url')
