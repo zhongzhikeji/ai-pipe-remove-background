@@ -6,7 +6,7 @@ import runpod
 
 from utils import buff_png, upload_image, extract_origin_pathname
 
-remover = Remover()
+remover = Remover(ckpt = './latest.pth')
 
 def run (job):
     # prepare task

@@ -1,5 +1,5 @@
 from transparent_background import Remover
 
 print('cache remover model')
-Remover()
+Remover(ckpt = './latest.pth')
 print('done')
