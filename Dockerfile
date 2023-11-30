@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 WORKDIR /workspace
 
-ADD https://huggingface.co/crapthings/plemeri-transparent-background/resolve/main/latest.pth
+ADD https://huggingface.co/crapthings/plemeri-transparent-background/resolve/main/latest.pth .
 
 COPY scripts ./scripts
 COPY transparent-background ./transparent-background
