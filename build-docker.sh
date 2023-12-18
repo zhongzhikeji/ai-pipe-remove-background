@@ -1,1 +1,1 @@
-docker build -t ai-pipe-remove-background:0.0.1 .
+docker build -t ai-pipe-seg-clothing-a1:0.0.1 .
