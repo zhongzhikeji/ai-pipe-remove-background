@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 WORKDIR /workspace
 
-ADD https://huggingface.co/crapthings/inspyrenet-clothing/resolve/main/20240119/latest.pth .
+ADD https://huggingface.co/crapthings/inspyrenet-clothing/resolve/main/20240116/latest.pth .
 
 COPY scripts ./scripts
 COPY transparent-background ./transparent-background
